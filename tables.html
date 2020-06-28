@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>MySQL - Table Commands</title>
+  <link rel="stylesheet" href="Stylesheet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="main.html">Notes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!--DROPDOWN BUTTON -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MySQL</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="databases.html">Database Commands</a>
+            <a class="dropdown-item" href="tables.html">Table Commands</a>
+            <a class="dropdown-item" href="strings.html">String Commands</a>
+            <a class="dropdown-item" href="aggregate_functions.html">Aggregate Functions</a>
+            <a class="dropdown-item" href="data_types.html">Data Types</a>
+            <a class="dropdown-item" href="joins.html">Joins</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="reference.html">Terms</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <table class="table table-dark">
+    <tr>
+      <th scope="col">Term</th>
+      <th scope="col">Syntax</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td scope="row">CREATE TABLE</td>
+      <td><span class="topic">CREATE TABLE <span class="UserSpec">table_name</span>(<span class="UserSpec">column_1</span> Data_Type (Parameter), <span class="UserSpec">column_2</span> Data_Type (Parameter))</span>;</td>
+      <td>Creates a Table in the currently selected database</td>
+    </tr>
+    <tr>
+      <td scope="row">DROP TABLE</td>
+      <td><span class="topic">DROP TABLE</span> <span class="UserSpec">table_name</span>;</td>
+      <td>Permanently removes a table form the database</td>
+    </tr>
+    <tr>
+      <td scope="row">NOT NULL</td>
+      <td>CREATE TABLE table_name (<span class="UserSpec">column_1</span> Data_Type (Parameter) <span class="topic">NOT NULL</span>, <span class="UserSpec">column_2</span> Data_Type (Parameter) <span class="topic">NOT NULL</span>);</td>
+      <td>NOT NULL - Specifies that a table value cannot be NULL</td>
+    </tr>
+    <tr>
+      <td scope="row">DEFAULT</td>
+      <td>CREATE TABLE <span class="UserSpec">table_name</span> (<span class="UserSpec">column_1</span> Data_Type (Parameter) <span class="topic">DEFAULT</span> 'unnamed', <span class="UserSpec">column_2</span> Data_Type (Parameter) <span class="topic">DEFAULT</span> 99);</td>
+      <td>DEFAULT - if no table value is given, then the specified default is used</td>
+    </tr>
+    <tr>
+      <td scope="row">PRIMARY KEY()</td>
+      <td>CREATE TABLE table_name (<span class="UserSpec">column_1</span> Data_Type (Parameter), <span class="UserSpec">column_2</span> Data_Type (Parameter), <span class="topic">PRIMARY KEY (<span class="UserSpec">column_1</span>)</span>);</td>
+      <td>PRIMARY KEY - Specifies that this column value must be unique</td>
+    </tr>
+    <tr>
+      <td scope="row">AUTO_INCREMENT</td>
+      <td>CREATE TABLE <span class="UserSpec">table_name</span> (<span class="UserSpec">column_1</span> INT <span class="topic">AUTO_INCREMENT</span>, <span class="UserSpec">column_2</span> Data_Type (Parameter));</td>
+      <td>AUTO_INCREMENT - Automatically increments the integer after each new entry</td>
+    </tr>
+    <tr>
+      <td scope="row">SHOW COLUMNS</td>
+      <td><span class="topic">SHOW COLUMNS</span> FROM <span class="UserSpec">table_name</span>;</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td scope="row">DESC</td>
+      <td><span class="topic">DESC</span> <span class="UserSpec">table_name</span>;</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td scope="row">SELECT * FROM</td>
+      <td><span class="topic">SELECT * FROM</span> <span class="UserSpec">table_name</span>;</td>
+      <td>Select all columns from a table</td>
+    </tr>
+    <tr>
+      <td scope="row">SELECT [col] FROM</td>
+      <td><span class="topic">SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="UserSpec">column_3</span> FROM</span> <span class="UserSpec">table_name</span>;</td>
+      <td>allows the selection of multiple columns from a table</td>
+    </tr>
+    <tr>
+      <td scope="row">WHERE</td>
+      <td>SELECT * FROM <span class="UserSpec">table_name</span> <span class="topic">WHERE <span class="UserSpec">column_1</span> = 'value'</span>; </td>
+      <td>WHERE - allows the selection of specific data based on given criteria</td>
+    </tr>
+    <tr>
+      <td scope="row">AS</td>
+      <td>SELECT <span class="UserSpec">column_1</span> <span class="topic">AS new_name</span> FROM <span class="UserSpec">table_name</span>;</td>
+      <td>AS - allows the data to be displayed differently without changing the database</td>
+    </tr>
+    <tr>
+      <td scope="row">SHOW TABLES</td>
+      <td><span class="topic">SHOW TABLES</span>;</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td scope="row">SHOW WARNINGS</td>
+      <td><span class="topic">SHOW WARNINGS</span>;</td>
+      <td>SHOW WARNINGS displays all warnings if one is encountered</td>
+    </tr>
+    <tr>
+      <td scope="row">INSERT INTO</td>
+      <td><span class="topic">INSERT INTO <span class="UserSpec">table_name</span> (<span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>) Values ('Value 1', 'Value 2'), ('Value 1', 'Value 2')</span>;</td>
+      <td>INSERT INTO - Add values into a table by column name and data type</td>
+    </tr>
+    <tr>
+      <td scope="row">UPDATE</td>
+      <td><span class="topic">UPDATE <span class="UserSpec">table_name</span> SET <span class="UserSpec">column_1</span> = 'new_value' WHERE <span class="UserSpec">column_1</span> = 'current_value'</span>; </td>
+      <td>UPDATE - modify an existing value within a table</td>
+    </tr>
+    <tr>
+      <td scope="row">DELETE</td>
+      <td><span class="topic">DELETE</span> FROM <span class="UserSpec">table_name</span> WHERE <span class="UserSpec">column_1</span> = 'current_value';</td>
+      <td>Description</td>
+    </tr>
+  </table>
+
+</body>
+</html>

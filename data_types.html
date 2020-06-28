@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>MySQL - Data Types</title>
+  <link rel="stylesheet" href="Stylesheet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="main.html">Notes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!--DROPDOWN BUTTON -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MySQL</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="databases.html">Database Commands</a>
+            <a class="dropdown-item" href="tables.html">Table Commands</a>
+            <a class="dropdown-item" href="strings.html">String Commands</a>
+            <a class="dropdown-item" href="aggregate_functions.html">Aggregate Functions</a>
+            <a class="dropdown-item" href="data_types.html">Data Types</a>
+            <a class="dropdown-item" href="joins.html">Joins</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="reference.html">Terms</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <table class="table table-dark">
+    <tr>
+      <th scope="col">Term</th>
+      <th scope="col">Syntax</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td>VARCHAR</td>
+      <td>VARCHAR(size)</td>
+      <td>Variable length string - Size indicates max characters from 0 to 65535</td>
+    </tr>
+    <tr>
+      <td>CHAR</td>
+      <td>CHAR(size)</td>
+      <td>Fixed length string - Size indicates max characters from 0 to 255</td>
+    </tr>
+    <tr>
+      <td>INT</td>
+      <td>INT(size)</td>
+      <td>A medium integer. Signed Range -2147483648 to 2147483647. Unsigned 0 to 4294967295.</td>
+    </tr>
+    <tr>
+      <td>DECIMAL</td>
+      <td>DECIMAL(total digits, digits after decimal)</td>
+      <td>always adds a decimal</td>
+    </tr>
+    <tr>
+      <td>FLOAT</td>
+      <td>FLOAT</td>
+      <td>reliable to 7 digits</td>
+    </tr>
+    <tr>
+      <td>DOUBLE</td>
+      <td>DOUBLE</td>
+      <td>reliable to 14 digits</td>
+    </tr>
+    <tr>
+      <td>DATE</td>
+      <td>DATE</td>
+      <td>YYYY-MM-DD</td>
+    </tr>
+    <tr>
+      <td>TIME</td>
+      <td>TIME</td>
+      <td>HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>DATETIME</td>
+      <td>DATETIME</td>
+      <td>YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+    <tr>
+      <td>NOW</td>
+      <td>NOW()</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>TIMESTAMP</td>
+      <td>TIMESTAMP</td>
+      <td>YYYY-MM-DD HH:MM:SS</td>
+    </tr>
+  </table>
+</body>
+</html>

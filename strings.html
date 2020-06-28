@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>MySQL - String Commands</title>
+  <link rel="stylesheet" href="Stylesheet.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="main.html">Notes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!--DROPDOWN BUTTON -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MySQL</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="databases.html">Database Commands</a>
+            <a class="dropdown-item" href="tables.html">Table Commands</a>
+            <a class="dropdown-item" href="strings.html">String Commands</a>
+            <a class="dropdown-item" href="aggregate_functions.html">Aggregate Functions</a>
+            <a class="dropdown-item" href="data_types.html">Data Types</a>
+            <a class="dropdown-item" href="joins.html">Joins</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="reference.html">Terms</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <table class="table table-dark">
+    <tr>
+      <th scope="col">Term</th>
+      <th scope="col">Syntax</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td>CONCAT</td>
+      <td>SELECT <span class="topic">CONCAT(<span class="UserSpec">column_1</span>, "-", <span class="UserSpec">column_2</span>, "-", <span class="UserSpec">column_3</span>)</span> FROM <span class="UserSpec">db_name</span>;</td>
+      <td>concatenates multiple specified values</td>
+    </tr>
+    <tr>
+      <td>CONCAT_WS</td>
+      <td>SELECT <span class="topic">CONCAT_WS("-", <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="UserSpec">column_3</span>)</span> FROM <span class="UserSpec">db_name</span>;</td>
+      <td>concatenates multiple values together with a separator</td>
+    </tr>
+    <tr>
+      <td>SUBSTRING</td>
+      <td>SELECT <span class="topic">SUBSTRING('Hello World', 1, 5)</span>;</td>
+      <td>Extracts a portion of the string by start location and number of characters</td>
+    </tr>
+    <tr>
+      <td>SUBSTRING</td>
+      <td>SELECT <span class="topic">SUBSTRING('Hello World', 7)</span>;</td>
+      <td>Extracts a portion of the string by start location and going to the end of the string</td>
+    </tr>
+    <tr>
+      <td>SUBSTRING</td>
+      <td>SELECT <span class="topic">SUBSTRING('Hello World', -3)</span>;</td>
+      <td>Extracts a portion of the string starting from the last character and going backward</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td>SUBSTRING</td>
+      <td>SELECT CONCAT(<span class="topic">SUBSTRING(<span class="UserSpec">column_1</span>, 1, 10), '...'</span>)FROM <span class="UserSpec">db_name</span>;</td>
+      <td>Extracts a portion of the string by start location and number of characters</td>
+    </tr>
+    <tr>
+      <td>REPLACE</td>
+      <td>SELECT <span class="topic">REPLACE('Hello World', 'l', '7')</span>;</td>
+      <td>replaces the specified value with a new value</td>
+    </tr>
+    <tr>
+      <td>CHAR_LENGTH</td>
+      <td>SELECT CONCAT(<span class="UserSpec">column_1</span>, ' is ', <span class="topic">CHAR_LENGTH(<span class="UserSpec">column_1</span>)</span>, ' characters long') FROM <span class="UserSpec">db_name</span>;</td>
+      <td>returns the number of characters in a string</td>
+    </tr>
+    <tr>
+      <td>UPPER</td>
+      <td>SELECT CONCAT('THIS IS UPPER', <span class="topic">UPPER(<span class="UserSpec">column_1</span>)</span>) FROM <span class="UserSpec">db_name</span>;</td>
+      <td>converts all characters to uppercase</td>
+    </tr>
+    <tr>
+      <td>LOWER</td>
+      <td>SELECT CONCAT('this is lower ', <span class="topic">LOWER(<span class="UserSpec">column_1</span>)</span>) FROM <span class="UserSpec">db_name</span>;</td>
+      <td>converts all characters to lowercase</td>
+    </tr>
+    <tr>
+      <td>DISTINCT</td>
+      <td>SELECT <span class="topic">DISTINCT CONCAT(<span class="UserSpec">column_1</span>,' ', <span class="UserSpec">column_2</span>)</span> FROM <span class="UserSpec">db_name</span>;</td>
+      <td>Returns only the unique values for the specified column</td>
+    </tr>
+    <tr>
+      <td>ORDER BY</td>
+      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="UserSpec">column_3</span> FROM <span class="UserSpec">db_name</span> <span class="topic">ORDER BY <span class="UserSpec">column_2</span></span>;</td>
+      <td>Orders the results based on specified column</td>
+    </tr>
+    <tr>
+      <td>ORDER BY</td>
+      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="UserSpec">column_3</span> FROM <span class="UserSpec">db_name</span> <span class="topic">ORDER BY 2</span>;</td>
+      <td># value specifies the column to order by</td>
+    </tr>
+    <tr>
+      <td>ORDER BY</td>
+      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="UserSpec">column_3</span> FROM <span class="UserSpec">db_name</span> ORDER BY 1 <span class="topic">DESC</span>;</td>
+      <td>DESC - sorts in descending order</td>
+    </tr>
+    <tr>
+      <td>ORDER BY</td>
+      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="UserSpec">column_3</span> FROM <span class="UserSpec">db_name</span> ORDER BY 1 <span class="topic">ASC</span>;</td>
+      <td>ASC - sorts in ascending order</td>
+    </tr>
+    <tr>
+      <td>LIMIT</td>
+      <td>SELECT <span class="UserSpec">column_1</span> FROM <span class="UserSpec">db_name</span> <span class="topic">LIMIT 10</span>;</td>
+      <td>Specifies the max number of results to return</td>
+    </tr>
+    <tr>
+      <td>LIKE</td>
+      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span> FROM <span class="UserSpec">db_name</span> WHERE <span class="UserSpec">column_1</span> <span class="topic">LIKE '%da%'</span>;</td>
+      <td>% - Wildcard</td>
+    </tr>
+    <tr>
+      <td>LIKE</td>
+      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span> FROM <span class="UserSpec">db_name</span> WHERE <span class="UserSpec">column_2</span> <span class="topic">LIKE '____'</span>;</td>
+      <td>_ - Wildcard to find any ONE character</td>
+    </tr>
+    <tr>
+      <td>LIKE</td>
+      <td>SELECT <span class="UserSpec">column_1</span> FROM <span class="UserSpec">db_name</span> WHERE <span class="UserSpec">column_1</span> <span class="topic">LIKE '%\_%'</span>;</td>
+      <td>\ - Nullifies the next key phrase</td>
+    </tr>
+
+  </table>
+
+</body>
+</html>
