@@ -6,55 +6,121 @@
   <title>MySQL - Aggregate Functions</title>
   <link rel="stylesheet" href="Stylesheet.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="favicon" href="">
 </head>
 
 <body>
 
 <div id="NavBar"></div>
-<h3>Aggregate Functions</h3>
+
+<h6>Aggregate Functions</h6>
+
   <table class="table table-dark">
+
     <tr>
       <th scope="col">Term</th>
       <th scope="col">Syntax</th>
       <th scope="col">Description</th>
     </tr>
+
     <tr>
       <td>COUNT</td>
-      <td>SELECT <span class="topic">COUNT(*)</span> FROM <span class="UserSpec">db_name</span>;</td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="topic">COUNT(*)</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span>;
+      </td>
       <td>Count of specified value</td>
     </tr>
+
     <tr>
       <td>GROUP BY</td>
-      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span> FROM <span class="UserSpec">db_name</span> <span class="topic">GROUP BY <span class="UserSpec">column_2</span></span>;</td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="UserSpec">column_1</span>,
+        <span class="UserSpec">column_2</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span><br>
+        <span class="topic">GROUP BY</span>
+        <span class="UserSpec">column_2</span>;
+      </td>
       <td>Groups similar values together</td>
     </tr>
+
     <tr>
       <td>MIN</td>
-      <td>SELECT <span class="topic">MIN(<span class="UserSpec">column_1</span>)</span> FROM <span class="UserSpec">db_name</span>;</td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="topic">MIN</span>
+        <span class="UserSpec"> (column_1)</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span>;
+      </td>
       <td>Returns the smallest value</td>
     </tr>
+
     <tr>
       <td>MAX</td>
-      <td>SELECT <span class="topic">MAX(<span class="UserSpec">column_1</span>)</span> FROM <span class="UserSpec">db_name</span>;</td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="topic">MAX</span>
+        <span class="UserSpec">(column_1)</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span>;</td>
       <td>Returns the largest value</td>
     </tr>
 
     <tr>
       <td>SUM</td>
-      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="topic">SUM</span>(<span class="UserSpec">column_3</span>) FROM <span class="UserSpec">db_name</span> GROUP BY <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>;</td>
-      <td></td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="UserSpec">column_1</span>,
+        <span class="UserSpec">column_2</span>, <br>
+        <span class="topic">SUM</span>
+        <span class="UserSpec">(column_3)</span> <br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span><br>
+        <span class="keyword">GROUP BY</span>
+        <span class="UserSpec">column_1</span>,
+        <span class="UserSpec">column_2</span>;
+      </td>
+      <td>--DESCRIPTION PLACEHOLDER--</td>
     </tr>
 
     <tr>
       <td>AVG</td>
-      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>, <span class="topic">AVG</span>(<span class="UserSpec">column_3</span>) FROM <span class="UserSpec">db_name</span> GROUP BY <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span>;</td>
-      <td></td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="UserSpec">column_1</span>,
+        <span class="UserSpec">column_2</span>,<br>
+        <span class="topic">AVG</span>
+        <span class="UserSpec">(column_3)</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span><br>
+        <span class="keyword">GROUP BY</span>
+        <span class="UserSpec">column_1</span>,
+        <span class="UserSpec">column_2</span>;
+      </td>
+      <td>--DESCRIPTION PLACEHOLDER--</td>
     </tr>
 
     <tr>
       <td>SUB QUERIES</td>
-      <td>SELECT <span class="UserSpec">column_1</span>, <span class="UserSpec">column_2</span> FROM <span class="UserSpec">db_name</span> WHERE <span class="UserSpec">column_1</span> = (SELECT Min(<span class="UserSpec">column_1</span>) FROM <span class="UserSpec">db_name</span>); </td>
-      <td></td>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="UserSpec">column_1</span>,
+        <span class="UserSpec">column_2</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span><br>
+        <span class="keyword">WHERE</span>
+        <span class="UserSpec">column_1</span> = (
+        <span class="keyword">SELECT MIN</span>(
+        <span class="UserSpec">column_1</span>)<br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span>);
+      </td>
+      <td>--DESCRIPTION PLACEHOLDER--</td>
     </tr>
   </table>
 

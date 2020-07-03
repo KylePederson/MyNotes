@@ -1,15 +1,23 @@
 body {
   background-color: #1b262c;
 }
+h6{
+  padding-top: 70px;
 
-.UserSpec {
-  color: tomato;
 }
 
 .topic{
-  color:#fdd365;
+  color:#f69e7b;
 }
 
-.ExUserSpec{
-  color:#5b8c85;
+.UserSpec{
+  color:#f7f5dd;
+}
+
+.keyword{
+  color:#f69e7b;
+}
+
+.datatype{
+  color:#e84a5f;
 }
