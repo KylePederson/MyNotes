@@ -14,68 +14,121 @@
   <h6>Table Commands</h6>
 
   <table class="table table-dark">
+
     <tr>
       <th scope="col">Term</th>
       <th scope="col">Syntax</th>
       <th scope="col">Description</th>
     </tr>
+
     <tr>
-      <td scope="row">CREATE TABLE</td>
+      <th scope="row">CREATE TABLE</th>
       <td>
         <span class="topic">CREATE TABLE</span>
         <span class="UserSpec">tablename</span> (<br>
         <span class="UserSpec">column_1</span>
         <span class="datatype">INT</span>,<br>
         <span class="UserSpec">column_2</span>
-        <span class="datatype">VARCHAR (30)</span><br>);
+        <span class="datatype">VARCHAR </span>(
+        <span class="values">30</span>)<br>);
       </td>
       <td>Creates a Table in the currently selected database</td>
     </tr>
+
     <tr>
-      <td scope="row">NOT NULL</td>
+      <th scope="row">NOT NULL</th>
       <td>
         <span class="keyword">CREATE TABLE</span>
         <span class="UserSpec">tablename</span> (<br>
         <span class="UserSpec">column_1</span>
-        <span class="datatype">DECIMAL (3,2)</span>
+        <span class="datatype">DECIMAL </span>(
+        <span class="values">3,2</span>)
         <span class="topic">NOT NULL</span>,<br>
         <span class="UserSpec">column_2</span>
-        <span class="datatype">VARCHAR (255)</span>
+        <span class="datatype">VARCHAR </span>(
+        <span class="values">255</span>)
         <span class="topic">NOT NULL</span><br>
         );
       </td>
-      <td>NOT NULL - Specifies that a table value cannot be NULL</td>
+      <td>Value cannot be NULL</td>
     </tr>
+
     <tr>
-      <td scope="row">DEFAULT</td>
+      <th scope="row">DEFAULT</th>
       <td>
         <span class="keyword">CREATE TABLE</span>
         <span class="UserSpec">tablename</span> (<br>
         <span class="UserSpec">column_1</span>
-        <span class="datatype">CHAR (5)</span>
-        <span class="topic">DEFAULT</span> 'blank',<br>
+        <span class="datatype">CHAR </span>(
+        <span class="values">5</span>)
+        <span class="topic">DEFAULT</span>
+        <span class="values">'blank'</span>,<br>
         <span class="UserSpec">column_2</span>
         <span class="datatype">INT</span>
-        <span class="topic">DEFAULT</span> 99 <br>);
+        <span class="topic">DEFAULT</span>
+        <span class="values">99</span> <br>);
       </td>
-      <td>DEFAULT - if no table value is given, then the specified default is used</td>
+      <td>Insert a default value instead of null</td>
     </tr>
+
     <tr>
-      <td scope="row">PRIMARY KEY()</td>
+      <th scope="row">PRIMARY KEY()</th>
       <td>
         <span class="keyword">CREATE TABLE</span>
         <span class="UserSpec">tablename</span> (<br>
         <span class="UserSpec">column_1</span>
         <span class="datatype">INT </span>,<br>
         <span class="UserSpec">column_2</span>
-        <span class="datatype">VARCHAR (55)</span>,<br>
+        <span class="datatype">VARCHAR </span>(
+        <span class="values">55</span>),<br>
         <span class="topic">PRIMARY KEY</span> (
         <span class="UserSpec">column_1</span>)<br>);
       </td>
-      <td>PRIMARY KEY - Specifies that this column value must be unique</td>
+      <td>Column value must be unique</td>
     </tr>
+
     <tr>
-      <td scope="row">AUTO_INCREMENT</td>
+      <th scope="row">FOREIGN KEY()</th>
+      <td>
+        <span class="keyword">CREATE TABLE </span>
+        <span class="UserSpec">table_2 </span>(<br>
+        <span class="UserSpec">column_1</span>
+        <span class="datatype">INT</span>
+        <span class="keyword">PRIMARY KEY</span>,<br>
+        <span class="UserSpec">column_2 </span>
+        <span class="datatype">INT</span>,<br>
+        <span class="topic">FOREIGN KEY</span>
+        <span class="UserSpec">(column_2)</span><br>
+        <span class="topic">REFERENCES</span>
+        <span class="UserSpec">table_1</span>(
+        <span class="UserSpec">column_1)</span><br>);
+      </td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <th scope="row">ON DELETE CASCADE</th>
+      <td>
+        <span class="keyword">CREATE TABLE </span>
+        <span class="UserSpec">table_2 </span>(<br>
+        <span class="UserSpec">column_1</span>
+        <span class="datatype">INT</span>
+        <span class="keyword">PRIMARY KEY</span>,<br>
+        <span class="UserSpec">column_2 </span>
+        <span class="datatype">INT</span>,<br>
+        <span class="keyword">FOREIGN KEY</span>
+        <span class="UserSpec">(column_2)</span><br>
+        <span class="keyword">REFERENCES</span>
+        <span class="UserSpec">table_1</span>(
+        <span class="UserSpec">column_1)</span><br>
+        <span class="topic">ON DELETE CASCADE</span><br>
+        );
+      </td>
+      <td>Dropping the table drops the referenced table(s) also</td>
+    </tr>
+
+    <tr>
+      <th scope="row">AUTO_INCREMENT</th>
       <td>
         <span class="keyword">CREATE TABLE</span>
         <span class="UserSpec">tablename</span> (<br>
@@ -83,67 +136,75 @@
         <span class="keyword">INT</span>
         <span class="topic">AUTO_INCREMENT</span>,<br>
         <span class="UserSpec">column_2</span>
-        <span class="datatype">VARCHAR (255)</span><br>);
+        <span class="datatype">VARCHAR </span>(
+        <span class="values">255</span>)<br>);
       </td>
-      <td>AUTO_INCREMENT - Automatically increments the integer after each new entry</td>
+      <td>Automatically increment after each new insert</td>
     </tr>
+
     <tr>
-      <td scope="row">DROP TABLE</td>
+      <th scope="row">DROP TABLE</th>
       <td>
         <span class="topic">DROP TABLE</span>
-        <span class="UserSpec">table_name</span>;
+        <span class="UserSpec">tablename</span>;
       </td>
-      <td>Permanently removes a table form the database</td>
+      <td>Permanently remove table</td>
     </tr>
+
     <tr>
-      <td scope="row">SHOW COLUMNS</td>
+      <th scope="row">SHOW COLUMNS</th>
       <td>
         <span class="topic">SHOW COLUMNS</span>
         <span class="keyword">FROM</span>
         <span class="UserSpec">tablename</span>;
       </td>
-      <td>--DESCRIPTION PLACEHOLDER--</td>
+      <td>Prints detailed column information</td>
     </tr>
     <tr>
-      <td scope="row">DESC</td>
+
+      <th scope="row">DESC</th>
       <td>
         <span class="topic">DESC</span>
         <span class="UserSpec">tablename</span>;
       </td>
-      <td>--DESCRIPTION PLACEHOLDER--</td>
+      <td>Prints detailed column information</td>
     </tr>
+
     <tr>
-      <td scope="row">SELECT * FROM</td>
+      <th scope="row">SELECT * FROM</th>
       <td>
         <span class="topic">SELECT * FROM</span>
         <span class="UserSpec">tablename</span>;
       </td>
       <td>Select all columns from a table</td>
     </tr>
+
     <tr>
-      <td scope="row">SELECT [col] FROM</td>
+      <th scope="row">SELECT column FROM</th>
       <td>
         <span class="topic">SELECT</span>
         <span class="UserSpec">column_1</span>,
-        <span class="UserSpec">column_2</span>,
-        <span class="UserSpec">column_3</span> <br>
+        <span class="UserSpec">column_2</span><br>
         <span class="keyword">FROM</span>
         <span class="UserSpec">tablename</span>;
       </td>
-      <td>allows the selection of multiple columns from a table</td>
+      <td>select multiple columns from a table</td>
     </tr>
+
     <tr>
-      <td scope="row">WHERE</td>
+      <th scope="row">WHERE</th>
       <td>
         <span class="keyword">SELECT * FROM</span>
         <span class="UserSpec">tablename</span><br>
         <span class="topic">WHERE</span>
-        <span class="UserSpec">column_1 ='value'</span>;
+        <span class="UserSpec">column_1 = </span>
+        <span class="values">'value'</span>;
       </td>
-      <td>WHERE - allows the selection of specific data based on given criteria</td>
+      <td>Select data where criteria is met</td>
     </tr>
+
     <tr>
-      <td scope="row">AS</td>
+      <th scope="row">AS</th>
       <td>
         <span class="keyword">SELECT</span>
         <span class="UserSpec">column_1</span>
@@ -151,56 +212,67 @@
         <span class="keyword">FROM</span>
         <span class="UserSpec">tablename</span>;
       </td>
-      <td>AS - allows the data to be displayed differently without changing the database</td>
+      <td>display column with a new name</td>
     </tr>
+
     <tr>
-      <td scope="row">SHOW TABLES</td>
+      <th scope="row">SHOW TABLES</th>
       <td>
         <span class="topic">SHOW TABLES</span>;
       </td>
-      <td>--DESCRIPTION PLACEHOLDER--</td>
+      <td>Print list of tables in current database</td>
     </tr>
+
     <tr>
-      <td scope="row">SHOW WARNINGS</td>
+      <th scope="row">SHOW WARNINGS</th>
       <td>
         <span class="topic">SHOW WARNINGS</span>;
       </td>
-      <td>SHOW WARNINGS displays all warnings if one is encountered</td>
+      <td>Displays warnings from last query</td>
     </tr>
+
     <tr>
-      <td scope="row">INSERT INTO</td>
+      <th scope="row">INSERT INTO</th>
       <td>
         <span class="topic">INSERT INTO</span>
         <span class="UserSpec">tablename (column_1, column_2)</span> <br>
-        <span class="keyword">Values</span> <br>
-        <span class="UserSpec">('Value_1', 'Value_2')</span>, <br>
-        <span class="UserSpec">('Value_1', 'Value_2')</span>;
+        <span class="keyword">Values</span><br>(
+        <span class="values">'value_1'</span>,
+        <span class="values">'value_2'</span>)<br>(
+        <span class="values">'value_1'</span>,
+        <span class="values">'value_2'</span>);
       </td>
-      <td>INSERT INTO - Add values into a table by column name and data type</td>
+      <td>Add values to a table</td>
     </tr>
+
     <tr>
-      <td scope="row">UPDATE</td>
+      <th scope="row">UPDATE</th>
       <td>
         <span class="topic">UPDATE</span>
-        <span class="UserSpec">table_name</span><br>
+        <span class="UserSpec">tablename</span><br>
         <span class="keyword">SET</span>
-        <span class="UserSpec">column_1= 'new_value'</span><br>
+        <span class="UserSpec">column_1= </span>
+        <span class="values">'new_value'</span><br>
         <span class="keyword">WHERE</span>
-        <span class="UserSpec">column_1 = 'value'</span>;
+        <span class="UserSpec">column_1 = </span>
+        <span class="values">'value'</span>;
       </td>
-      <td>UPDATE - modify an existing value within a table</td>
+      <td>Modify all values where the condition is true</td>
     </tr>
+
     <tr>
-      <td scope="row">DELETE</td>
+      <th scope="row">DELETE</th>
       <td>
         <span class="topic">DELETE</span>
-         <span class="keyword">FROM</span>
-         <span class="UserSpec">table_name</span><br>
-         <span class="keyword">WHERE</span>
-         <span class="UserSpec">column_1 = 'value'</span>;
-       </td>
-      <td>--DESCRIPTION PLACEHOLDER--</td>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename</span><br>
+        <span class="keyword">WHERE</span>
+        <span class="UserSpec">column_1 = </span>
+        <span class="values">'value'</span>;
+      </td>
+      <td>Delete all values where the condition is true</td>
     </tr>
+
   </table>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -211,4 +283,5 @@
 
 
 </body>
+
 </html>

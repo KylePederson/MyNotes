@@ -18,28 +18,27 @@
       <th scope="col">Syntax</th>
       <th scope="col">Description</th>
     </tr>
-    <tr>
-      <th scope="row">FOREIGN KEY()</th>
-      <td></td>
-      <td></td>
-    </tr>
 
     <tr>
-      <th scope="row">REFERENCE()</th>
-      <td></td>
-      <td></td>
-    </tr>
+      <th scope="row">JOINS</th>
+      <td>
+        <span class="keyword">SELECT</span>
+        <span class="UserSpec">column_1, column_2</span><br>
+        <span class="keyword">FROM</span>
+        <span class="UserSpec">tablename_1</span><br>
+        <span class="topic">JOIN</span>
+        <span class="UserSpec">tablename_2</span><br>
+        <span class="topic">ON</span>
+        <span class="UserSpec">tablename_1.column = tablename_2.column</span>
+      </td>
 
-    <tr>
-      <th scope="row">JOIN ON</th>
-      <td></td>
-      <td></td>
-    </tr>
-
-    <tr>
-      <th scope="row">Prepend</th>
-      <td></td>
-      <td></td>
+      <td>
+        <ul>
+          <li>INNER JOIN - selects items that exactly match in all tables</li>
+          <li>LEFT JOIN - select everything from first table and all matches from other</li>
+          <li>RIGHT JOIN - selects everything from the second table and all matches from the other</li>
+        </ul>
+      </td>
     </tr>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

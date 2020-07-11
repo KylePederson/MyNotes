@@ -7,17 +7,21 @@ h6{
 }
 
 .topic{
-  color:#f69e7b;
-}
-
-.UserSpec{
-  color:#f7f5dd;
+  color:#e84a5f;
 }
 
 .keyword{
-  color:#f69e7b;
+  color:#e84a5f;
+}
+
+.UserSpec{
+  color:white;
 }
 
 .datatype{
-  color:#e84a5f;
+  color:#0e9aa7;
+}
+
+.values{
+  color:#b6eb7a;
 }
